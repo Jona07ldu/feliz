@@ -1,10 +1,11 @@
-<!-- dos.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>¡Feliz Cumpleaños!</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -13,46 +14,60 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: #ffe5e5;
+      background: #fff5f8;
       font-family: 'Segoe UI', sans-serif;
       position: relative;
       overflow: hidden;
     }
     h1 {
-      font-size: 3rem;
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
       color: #d6336c;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25em;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50%     { transform: scale(1.05); }
     }
     p {
-      font-size: 1.5rem;
-      color: #495057;
+      font-size: 1.25rem;
+      color: #555;
       text-align: center;
-      max-width: 600px;
+      max-width: 500px;
       margin-bottom: 2rem;
     }
     .scene {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      width: 200px;
+      position: relative;
+      width: 250px;
+      height: auto;
       animation: bob 3s ease-in-out infinite;
+      z-index: 1;
     }
     .scene img {
       width: 100%;
       display: block;
     }
     @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-10px); }
     }
   </style>
 </head>
 <body>
   <h1>¡Feliz Cumpleaños!</h1>
-  <p>Que tengas un gran día y lo disfrutes! Recuerda que eres muy importante para todos y cada vez estas más viejita!! ❤️🎉</p>
+  <p>Querida Emily, que este día esté lleno de risas, amor y momentos inolvidables. Te queremos muchísimo y celebramos cada día de tu vida. ❤️🎉</p>
   <div class="scene">
-    <img src="https://i.pinimg.com/236x/75/2e/e8/752ee82a97f59ce46859bb6aff4a69a2.jpg" alt="Gato de cumpleaños con globos" />
+    <img src="https://cdn.pixabay.com/photo/2020/11/28/09/39/cat-5781057_960_720.png" alt="Gato de cumpleaños con globos" />
   </div>
+
+  <!-- Confetti continuo detrás de la escena -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    // Lanza confeti cada 1.5s
+    setInterval(() => {
+      confetti({ particleCount: 30, spread: 100, origin: { x: Math.random(), y: 0 } });
+    }, 1500);
+  </script>
 </body>
 </html>
-
