@@ -1,10 +1,11 @@
-<!-- uno.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>¡Tarjeta de Cumpleaños!</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -12,30 +13,45 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #fceabb, #f8b500);
+      /* degradado más suave y femenino */
+      background: linear-gradient(135deg, #fcbad3, #ffd1dc);
       font-family: 'Segoe UI', sans-serif;
       position: relative;
+      overflow: hidden;
+    }
+    h1 {
+      position: absolute;
+      top: 10%;
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      color: #d6336c;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50%     { transform: scale(1.05); }
     }
     .button-container {
       position: relative;
       display: inline-block;
+      z-index: 1;
     }
     .btn-link {
       display: inline-block;
       padding: 1rem 2rem;
       font-size: 1.5rem;
       color: white;
-      background: #ff6b6b;
+      background: #d6336c;
       text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-      z-index: 1;
+      border-radius: 50px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
     }
     .btn-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      background: #c12f5b;
+      transform: translateY(-5px) scale(1.05);
     }
+    /* flechas suavizadas */
     .arrow {
       position: absolute;
       width: 0;
@@ -43,45 +59,14 @@
       border-style: solid;
       animation: pulse 1.5s infinite;
     }
-    /* Flecha arriba */
-    .arrow.up {
-      bottom: 100%;
-      left: 50%;
-      margin-left: -15px;
-      border-width: 0 15px 20px 15px;
-      border-color: transparent transparent #ff6b6b transparent;
-    }
-    /* Flecha abajo */
-    .arrow.down {
-      top: 100%;
-      left: 50%;
-      margin-left: -15px;
-      border-width: 20px 15px 0 15px;
-      border-color: #ff6b6b transparent transparent transparent;
-    }
-    /* Flecha izquierda */
-    .arrow.left {
-      right: 100%;
-      top: 50%;
-      margin-top: -15px;
-      border-width: 15px 20px 15px 0;
-      border-color: transparent #ff6b6b transparent transparent;
-    }
-    /* Flecha derecha */
-    .arrow.right {
-      left: 100%;
-      top: 50%;
-      margin-top: -15px;
-      border-width: 15px 0 15px 20px;
-      border-color: transparent transparent transparent #ff6b6b;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%     { opacity: 0.5; }
-    }
+    .arrow.up    { bottom: 100%; left: 50%; margin-left: -12px; border-width: 0 12px 16px; border-color: transparent transparent #d6336c; }
+    .arrow.down  { top: 100%;    left: 50%; margin-left: -12px; border-width: 16px 12px 0; border-color: #d6336c transparent transparent; }
+    .arrow.left  { right:100%;   top: 50%; margin-top: -12px; border-width: 12px 16px 12px 0; border-color: transparent #d6336c transparent transparent; }
+    .arrow.right { left:100%;    top: 50%; margin-top: -12px; border-width: 12px 0 12px 16px; border-color: transparent transparent transparent #d6336c; }
   </style>
 </head>
 <body>
+  <h1>¡Haz clic aquí!</h1>
   <div class="button-container">
     <div class="arrow up"></div>
     <div class="arrow down"></div>
@@ -89,5 +74,16 @@
     <div class="arrow right"></div>
     <a class="btn-link" href="dos.html">Ma leri leri</a>
   </div>
+
+  <!-- confetti ligero al cargar -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    // lanza un poco de confeti al entrar
+    confetti({
+      particleCount: 100,
+      spread: 60,
+      origin: { y: 0.2 }
+    });
+  </script>
 </body>
 </html>
