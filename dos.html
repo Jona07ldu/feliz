@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Feliz Cumpleaños!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #ffe5e5;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #d6336c;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.5rem;
+      color: #495057;
+      text-align: center;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    .scene {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 200px;
+      animation: bob 3s ease-in-out infinite;
+    }
+    .scene img {
+      width: 100%;
+      display: block;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Feliz Cumpleaños!</h1>
+  <p>Que tengas un gran día y lo disfrutes! Recuerda que eres muy importante para todos y cada vez estas más viejita!! ❤️🎉</p>
+
+  <div class="scene">
+    <img src="https://i.pinimg.com/236x/75/2e/e8/752ee82a97f59ce46859bb6aff4a69a2.jpg"
+         alt="Gato de cumpleaños con globos" />
+  </div>
+</body>
+</html>
