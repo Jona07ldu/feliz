@@ -1,0 +1,93 @@
+<!-- uno.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Tarjeta de Cumpleaños!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
+    .button-container {
+      position: relative;
+      display: inline-block;
+    }
+    .btn-link {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      color: white;
+      background: #ff6b6b;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+      z-index: 1;
+    }
+    .btn-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .arrow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      animation: pulse 1.5s infinite;
+    }
+    /* Flecha arriba */
+    .arrow.up {
+      bottom: 100%;
+      left: 50%;
+      margin-left: -15px;
+      border-width: 0 15px 20px 15px;
+      border-color: transparent transparent #ff6b6b transparent;
+    }
+    /* Flecha abajo */
+    .arrow.down {
+      top: 100%;
+      left: 50%;
+      margin-left: -15px;
+      border-width: 20px 15px 0 15px;
+      border-color: #ff6b6b transparent transparent transparent;
+    }
+    /* Flecha izquierda */
+    .arrow.left {
+      right: 100%;
+      top: 50%;
+      margin-top: -15px;
+      border-width: 15px 20px 15px 0;
+      border-color: transparent #ff6b6b transparent transparent;
+    }
+    /* Flecha derecha */
+    .arrow.right {
+      left: 100%;
+      top: 50%;
+      margin-top: -15px;
+      border-width: 15px 0 15px 20px;
+      border-color: transparent transparent transparent #ff6b6b;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%     { opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <div class="arrow up"></div>
+    <div class="arrow down"></div>
+    <div class="arrow left"></div>
+    <div class="arrow right"></div>
+    <a class="btn-link" href="dos.html">Ma leri leri</a>
+  </div>
+</body>
+</html>
