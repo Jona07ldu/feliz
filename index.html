@@ -1,88 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>¡Tarjeta de Cumpleaños!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños!</title>
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      /* degradado más suave y femenino */
-      background: linear-gradient(135deg, #fcbad3, #ffd1dc);
-      font-family: 'Segoe UI', sans-serif;
-      position: relative;
-      overflow: hidden;
-    }
-    h1 {
-      position: absolute;
-      top: 10%;
-      font-family: 'Dancing Script', cursive;
-      font-size: 4rem;
-      color: #d6336c;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { transform: scale(1); }
-      50%     { transform: scale(1.05); }
-    }
-    .button-container {
-      position: relative;
-      display: inline-block;
-      z-index: 1;
-    }
-    .btn-link {
-      display: inline-block;
-      padding: 1rem 2rem;
-      font-size: 1.5rem;
-      color: white;
-      background: #d6336c;
-      text-decoration: none;
-      border-radius: 50px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn-link:hover {
-      background: #c12f5b;
-      transform: translateY(-5px) scale(1.05);
-    }
-    /* flechas suavizadas */
-    .arrow {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      animation: pulse 1.5s infinite;
-    }
-    .arrow.up    { bottom: 100%; left: 50%; margin-left: -12px; border-width: 0 12px 16px; border-color: transparent transparent #d6336c; }
-    .arrow.down  { top: 100%;    left: 50%; margin-left: -12px; border-width: 16px 12px 0; border-color: #d6336c transparent transparent; }
-    .arrow.left  { right:100%;   top: 50%; margin-top: -12px; border-width: 12px 16px 12px 0; border-color: transparent #d6336c transparent transparent; }
-    .arrow.right { left:100%;    top: 50%; margin-top: -12px; border-width: 12px 0 12px 16px; border-color: transparent transparent transparent #d6336c; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; background: #fff5f8; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+    h1 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: #d6336c; margin: 0.5rem 0; text-align: center; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    p { font-size: 1.2rem; color: #555; text-align: center; max-width: 90%; margin: 0.5rem 0 1.5rem; }
+    .scene { width: 70%; max-width: 300px; margin: 0 auto 2rem; animation: bob 3s ease-in-out infinite; }
+    .scene img { width: 100%; height: auto; display: block; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   </style>
 </head>
 <body>
-  <h1>¡Haz clic aquí!</h1>
-  <div class="button-container">
-    <div class="arrow up"></div>
-    <div class="arrow down"></div>
-    <div class="arrow left"></div>
-    <div class="arrow right"></div>
-    <a class="btn-link" href="dos.html">Ma leri leri</a>
+  <h1>¡Feliz Cumpleaños!</h1>
+  <p>Que tengas un gran día y lo disfrutes! Recuerda que eres muy importante para todos y cada vez estas más viejita!! ❤️🎉</p>
+  <div class="scene">
+    <img src="https://i.pinimg.com/236x/75/2e/e8/752ee82a97f59ce46859bb6aff4a69a2.jpg" alt="Gato de cumpleaños con globos">
   </div>
 
-  <!-- confetti ligero al cargar -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script>
-    // lanza un poco de confeti al entrar
-    confetti({
-      particleCount: 100,
-      spread: 60,
-      origin: { y: 0.2 }
+  <!-- Confetti continuo después de que cargue el DOM -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      setInterval(() => {
+        confetti({ particleCount: 30, spread: 100, origin: { x: Math.random(), y: 0 } });
+      }, 1500);
     });
   </script>
 </body>
