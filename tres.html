@@ -10,14 +10,14 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
+      background: linear-gradient(135deg, #fcbad3, #ffd1dc);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #fcbad3, #ffd1dc);
-      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      overflow: hidden;
     }
 
     h1 {
@@ -25,18 +25,19 @@
       font-size: 4rem;
       color: #d6336c;
       animation: pulse 2s infinite;
-      margin: 0 1rem 2rem;
-      max-width: 90%;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
     }
 
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
-      50%      { transform: scale(1.05); }
+      50% { transform: scale(1.05); }
     }
 
     .button-container {
       position: relative;
       display: inline-block;
+      z-index: 1;
     }
 
     .btn-link {
@@ -54,7 +55,8 @@
     .btn-link:hover {
       background: #c12f5b;
       transform: translateY(-5px) scale(1.05);
-    } 
+    }
+
     .arrow {
       position: absolute;
       width: 0;
@@ -65,18 +67,8 @@
 
     .arrow.up    { bottom: 100%; left: 50%; margin-left: -12px; border-width: 0 12px 16px; border-color: transparent transparent #d6336c transparent; }
     .arrow.down  { top: 100%;    left: 50%; margin-left: -12px; border-width: 16px 12px 0; border-color: #d6336c transparent transparent transparent; }
-    .arrow.left  { right:100%;   top: 50%; margin-top: -12px; border-width: 12px 16px 12px 0; border-color: transparent #d6336c transparent transparent; }
-    .arrow.right { left:100%;    top: 50%; margin-top: -12px; border-width: 12px 0 12px 16px; border-color: transparent transparent transparent #d6336c; }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .btn-link {
-        font-size: 1.2rem;
-        padding: 0.8rem 1.5rem;
-      }
-    }
+    .arrow.left  { right: 100%;  top: 50%; margin-top: -12px; border-width: 12px 16px 12px 0; border-color: transparent #d6336c transparent transparent; }
+    .arrow.right { left: 100%;   top: 50%; margin-top: -12px; border-width: 12px 0 12px 16px; border-color: transparent transparent transparent #d6336c; }
   </style>
 </head>
 <body>
