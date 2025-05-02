@@ -12,12 +12,19 @@
     min-height: 100vh;
     background: linear-gradient(135deg, #fcbad3, #ffd1dc);
     font-family: 'Segoe UI', sans-serif;
-    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   h1 {
@@ -25,7 +32,6 @@
     font-size: 4rem;
     color: #d6336c;
     animation: pulse 2s infinite;
-    margin-top: 3rem;
     margin-bottom: 2rem;
     padding: 0 1rem;
   }
@@ -73,13 +79,16 @@
 </style>
 </head>
 <body>
-  <h1>¡Hazlo con ganas! 🤨</h1>
-  <div class="button-container">
-    <div class="arrow up"></div>
-    <div class="arrow down"></div>
-    <div class="arrow left"></div>
-    <div class="arrow right"></div>
-    <a class="btn-link" href="tres.html">Ma leri leri</a>
+  <div class="content">
+    <h1>¡Hazlo con ganas! 🤨</h1>
+    <div class="button-container">
+      <div class="arrow up"></div>
+      <div class="arrow down"></div>
+      <div class="arrow left"></div>
+      <div class="arrow right"></div>
+      <a class="btn-link" href="tres.html">Ma leri leri</a>
+    </div>
   </div>
 </body>
+
 </html>
