@@ -13,26 +13,32 @@
   background: linear-gradient(135deg, #fcbad3, #ffd1dc);
   font-family: 'Segoe UI', sans-serif;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-   h1 {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px; /* Ajusta más arriba o más abajo */
+}
+
+h1 {
   font-family: 'Dancing Script', cursive;
   font-size: 4rem;
   color: #d6336c;
   animation: pulse 2s infinite;
-  margin: 0;
-  margin-bottom: 3rem; /* Esto separa bien el texto del botón */
+  margin: 0 0 3rem 0; /* Separación con el botón */
   text-align: center;
 }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
 
     .button-container {
       position: relative;
@@ -72,7 +78,7 @@
   </style>
 </head>
 <body>
-  <div class="content">
+  <div class="container">
     <h1>¡Hazlo con ganas! 🤨</h1>
     <div class="button-container">
       <div class="arrow up"></div>
