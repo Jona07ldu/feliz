@@ -4,38 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>¡Tarjeta de Cumpleaños!</title>
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      min-height: 100vh;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      /* degradado más suave y femenino */
+      align-items: center;
       background: linear-gradient(135deg, #fcbad3, #ffd1dc);
       font-family: 'Segoe UI', sans-serif;
-      position: relative;
+      text-align: center;
       overflow: hidden;
     }
+
     h1 {
-      position: absolute;
-      top: 10%;
       font-family: 'Dancing Script', cursive;
-      font-size: 4rem;
+      font-size: 3rem;
       color: #d6336c;
+      margin-bottom: 2rem;
       animation: pulse 2s infinite;
+      padding: 0 1rem;
     }
+
     @keyframes pulse {
-      0%,100% { transform: scale(1); }
-      50%     { transform: scale(1.05); }
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.05); }
     }
+
     .button-container {
       position: relative;
       display: inline-block;
-      z-index: 1;
     }
+
     .btn-link {
       display: inline-block;
       padding: 1rem 2rem;
@@ -47,11 +50,12 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       transition: background 0.3s, transform 0.3s;
     }
+
     .btn-link:hover {
       background: #c12f5b;
       transform: translateY(-5px) scale(1.05);
     }
-    /* flechas suavizadas */
+
     .arrow {
       position: absolute;
       width: 0;
@@ -59,10 +63,22 @@
       border-style: solid;
       animation: pulse 1.5s infinite;
     }
-    .arrow.up    { bottom: 100%; left: 50%; margin-left: -12px; border-width: 0 12px 16px; border-color: transparent transparent #d6336c; }
-    .arrow.down  { top: 100%;    left: 50%; margin-left: -12px; border-width: 16px 12px 0; border-color: #d6336c transparent transparent; }
+
+    .arrow.up    { bottom: 100%; left: 50%; margin-left: -12px; border-width: 0 12px 16px; border-color: transparent transparent #d6336c transparent; }
+    .arrow.down  { top: 100%;    left: 50%; margin-left: -12px; border-width: 16px 12px 0; border-color: #d6336c transparent transparent transparent; }
     .arrow.left  { right:100%;   top: 50%; margin-top: -12px; border-width: 12px 16px 12px 0; border-color: transparent #d6336c transparent transparent; }
     .arrow.right { left:100%;    top: 50%; margin-top: -12px; border-width: 12px 0 12px 16px; border-color: transparent transparent transparent #d6336c; }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .btn-link {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -74,6 +90,5 @@
     <div class="arrow right"></div>
     <a class="btn-link" href="tres.html">Ma leri leri</a>
   </div>
-  </script>
 </body>
 </html>
