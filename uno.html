@@ -42,9 +42,8 @@
 
   .button-container {
   position: relative;
-  display: inline-block;     /* Igual ancho que el botón */
-  z-index: 1;
-  /* elimina margin-top si no quieres separarlo */
+  display: inline-block;   /* hace que el ancho sea solo el del botón */
+  overflow: visible;       /* permite que las flechas queden fuera */
 }
     
       .btn-link {
@@ -75,42 +74,54 @@
 
 /* Flecha arriba */
 .arrow.up {
-  bottom: 100%;              /* justo encima del botón */
+  position: absolute;
+  bottom: calc(100% + 8px);    /* 8px sobre el botón */
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: 8px;        /* espacio entre botón y flecha */
+  width: 0; height: 0;
+  border-style: solid;
   border-width: 0 12px 16px;
   border-color: transparent transparent #d6336c transparent;
+  animation: pulse 1.5s infinite;
 }
 
 /* Flecha abajo */
 .arrow.down {
-  top: 100%;                 /* justo debajo del botón */
+  position: absolute;
+  top: calc(100% + 8px);       /* 8px debajo del botón */
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 8px;           /* espacio */
+  width: 0; height: 0;
+  border-style: solid;
   border-width: 16px 12px 0;
   border-color: #d6336c transparent transparent transparent;
+  animation: pulse 1.5s infinite;
 }
 
 /* Flecha izquierda */
 .arrow.left {
-  right: 100%;               /* justo a la izquierda */
+  position: absolute;
+  right: calc(100% + 8px);     /* 8px a la izquierda */
   top: 50%;
   transform: translateY(-50%);
-  margin-right: 8px;         /* espacio */
+  width: 0; height: 0;
+  border-style: solid;
   border-width: 12px 16px 12px 0;
   border-color: transparent #d6336c transparent transparent;
+  animation: pulse 1.5s infinite;
 }
 
 /* Flecha derecha */
 .arrow.right {
-  left: 100%;                /* justo a la derecha */
+  position: absolute;
+  left: calc(100% + 8px);      /* 8px a la derecha */
   top: 50%;
   transform: translateY(-50%);
-  margin-left: 8px;          /* espacio */
+  width: 0; height: 0;
+  border-style: solid;
   border-width: 12px 0 12px 16px;
   border-color: transparent transparent transparent #d6336c;
+  animation: pulse 1.5s infinite;
 }
 </style>
 </head>
