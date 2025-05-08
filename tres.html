@@ -67,18 +67,37 @@
     transform: translateY(-5px) scale(1.05);
   }
 
-  .arrow {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    animation: pulse 1.5s infinite;
-  }
+  .arrow.up {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 12px 16px;
+  border-color: transparent transparent #d6336c transparent;
+}
 
-  .arrow.up    { bottom: 100%; left: 50%; margin-left: -12px; border-width: 0 12px 16px; border-color: transparent transparent #d6336c transparent; }
-  .arrow.down  { top: 100%;    left: 50%; margin-left: -12px; border-width: 16px 12px 0; border-color: #d6336c transparent transparent transparent; }
-  .arrow.left  { right: 100%;  top: 50%; margin-top: -12px; border-width: 12px 16px 12px 0; border-color: transparent #d6336c transparent transparent; }
-  .arrow.right { left: 100%;   top: 50%; margin-top: -12px; border-width: 12px 0 12px 16px; border-color: transparent transparent transparent #d6336c; }
+.arrow.down {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 16px 12px 0;
+  border-color: #d6336c transparent transparent transparent;
+}
+
+.arrow.left {
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 12px 16px 12px 0;
+  border-color: transparent #d6336c transparent transparent;
+}
+
+.arrow.right {
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 12px 0 12px 16px;
+  border-color: transparent transparent transparent #d6336c;
+}
 </style>
 </head>
 <body>
