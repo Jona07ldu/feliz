@@ -72,44 +72,48 @@
   animation: pulse 1.5s infinite;
 }
 
-/* flecha arriba */
+/* arriba */
 .arrow.up {
   position: absolute;
-  top: -13px;              /* 20px por encima del botón */
+  top: -20px;             /* 20px sobre el botón */
   left: 50%;
-  margin-left: -12px;      /* 12px = mitad del ancho de la flecha */
-  border-width: 0 12px 16px;
-  border-color: transparent transparent #d6336c transparent;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid #d6336c;
 }
 
-/* flecha abajo */
+/* abajo */
 .arrow.down {
   position: absolute;
-  bottom: -13px;           /* 20px por debajo */
+  bottom: -20px;          /* 20px bajo el botón */
   left: 50%;
-  margin-left: -12px;
-  border-width: 16px 12px 0;
-  border-color: #d6336c transparent transparent transparent;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #d6336c;
 }
 
-/* flecha izquierda */
+/* izquierda */
 .arrow.left {
   position: absolute;
-  left: -13px;             /* 20px a la izquierda */
+  left: -20px;            /* 20px a la izquierda */
   top: 50%;
-  margin-top: -12px;       /* 12px = mitad de la altura de la flecha */
-  border-width: 12px 16px 12px 0;
-  border-color: transparent #d6336c transparent transparent;
+  transform: translateY(-50%);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid #d6336c;
 }
 
-/* flecha derecha */
+/* derecha */
 .arrow.right {
   position: absolute;
-  right: -13px;            /* 20px a la derecha */
+  right: -20px;           /* 20px a la derecha */
   top: 50%;
-  margin-top: -12px;
-  border-width: 12px 0 12px 16px;
-  border-color: transparent transparent transparent #d6336c;
+  transform: translateY(-50%);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #d6336c;
 }
 </style>
 </head>
