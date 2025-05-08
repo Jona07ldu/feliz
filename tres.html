@@ -75,7 +75,7 @@
   }
 
   .arrow.up {
-  bottom: 100%;
+  bottom: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   border-width: 0 12px 16px;
@@ -83,7 +83,7 @@
 }
 
 .arrow.down {
-  top: 100%;
+  top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   border-width: 16px 12px 0;
@@ -91,7 +91,7 @@
 }
 
 .arrow.left {
-  left: -24px;
+  right: calc(100% + 10px);
   top: 50%;
   transform: translateY(-50%);
   border-width: 12px 16px 12px 0;
@@ -99,7 +99,7 @@
 }
 
 .arrow.right {
-  right: -24px;
+  left: calc(100% + 10px);
   top: 50%;
   transform: translateY(-50%);
   border-width: 12px 0 12px 16px;
